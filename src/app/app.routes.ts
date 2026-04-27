@@ -1,7 +1,7 @@
 export const APP_ROUTES = {
   public: {
     home: "/",
-    register: "/auth/register",
+    register: "/register",
   },
 
   private: {},
