@@ -1,10 +1,10 @@
-import { APP_ROUTES } from "@/src/app/app.routes";
+import { APP_ROUTES } from "@/app/app.routes";
 import Link from "next/link";
-import { Button } from "@/src/shared/components/ui/button";
+import { Button } from "@/shared/components/ui/button";
 
 export function Navbar() {
   return (
-    <nav className="grid grid-cols-3 items-center font-bold bg-gray-100 text-emerald-700 tracking-tight p-4">
+    <nav className="grid grid-cols-3 items-center font-bold bg-gray-100 text-primary tracking-tight p-4">
       <div className="flex justify-start  text-2xl">
         <link
           href={APP_ROUTES.public.home}
@@ -23,7 +23,7 @@ export function Navbar() {
       </div>
 
       <div className="flex justify-end">
-        <Button className="bg-emerald-700 hover:bg-emerald-800 text-white p-4">
+        <Button className=" hover:bg-emerald-800 text-white p-4">
           <Link href={APP_ROUTES.public.register}>Criar Conta</Link>
         </Button>
       </div>
