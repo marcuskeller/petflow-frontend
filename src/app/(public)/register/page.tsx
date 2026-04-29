@@ -25,13 +25,7 @@ interface FormFieldProps extends ComponentProps<"input"> {
   label: string;
   icon: LucideIcon;
 }
-const FormField = ({
-  label,
-  id,
-  icon: Icon,
-  type,
-  placeholder,
-}: FormFieldProps) => (
+const FormField = ({ label, id, icon: Icon, ...props }: FormFieldProps) => (
   <div className="grid gap-2 text-left">
     <label
       className="text-xs font-semibold tracking-wider text-muted-foreground uppercase ml-1"
@@ -41,20 +35,14 @@ const FormField = ({
     </label>
     <div className="relative flex items-center justify-center w-full">
       <Icon className="absolute left-3 h-4 w-4 text-muted-foreground pointer-events-none" />
-      <Input
-        className="pl-10"
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        required
-      />
+      <Input className="pl-10" id={id} {...props} required />
     </div>
   </div>
 );
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState<UserModel>({
-    username: "",
+    name: "",
     email: "",
     password: "",
     confirm_password: "",
@@ -102,11 +90,11 @@ export default function RegisterPage() {
             <div className="grid gap-4">
               <FormField
                 label="NOME DE USUÁRIO"
-                id="username"
+                id="name"
                 icon={UserRound}
                 type="text"
                 placeholder="Digite seu nome de usuário"
-                value={formData.username}
+                value={formData.name}
                 onChange={handleChange}
               />
 
